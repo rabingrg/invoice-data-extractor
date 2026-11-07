@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "invoice-extractor"
 version = "0.1.0"
 description = "Extract structured JSON from invoice images using Google Gemini, with validation."
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "google-genai>=1.47,<2",
