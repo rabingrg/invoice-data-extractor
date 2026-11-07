@@ -32,7 +32,7 @@ DEFAULT_MODEL = "gemini-3.5-flash"
 MAX_IMAGE_BYTES = 20 * 1024 * 1024  # Gemini inline request limit
 SUPPORTED_FORMATS = {"PNG": "image/png", "JPEG": "image/jpeg", "WEBP": "image/webp"}
 REQUEST_TIMEOUT_MS = 60_000  # per request; avoids hanging forever on a stuck connection
-RETRYABLE_STATUS ={429, 500, 502, 503, 504}
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 
 PROMPT = """You are an invoice data extraction system.
 Read the attached invoice image and extract the data into the given JSON schema.
