@@ -24,6 +24,7 @@ from PIL import Image, UnidentifiedImageError
 from pydantic import ValidationError
 
 from .models import ExtractionResult, Invoice
+from .validation import validate_invoice
 
 log = logging.getLogger(__name__)
 
@@ -201,5 +202,10 @@ def extract_invoice(
         )
 
     return ExtractionResult(
-        source_file=str(image_path), model=model_name, extracted_at=started, success=True, invoice=invoice
+        source_file=str(image_path),
+        model=model_name,
+        extracted_at=started,
+        success=True,
+        invoice=invoice,
+        validation=validate_invoice(invoice),
     )
